@@ -11,10 +11,21 @@
 
 		$query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
 
-		$sql = mysqli_query("$query", $connection);
+		$sql = mysqli_query($connection, $query);
 
 		$rows = mysqli_num_rows($sql);
 
-		var_dump($rows);
+		if($rows == 0){
+			$out = array('status' => 0, 'message' => 'Invalid login details');
+		}else{
+			$data = mysqli_fetch_assoc($sql);
+			$out = array(
+				'status' => 1,
+				'message' => 'Login successful',
+				'data' => $data
+			);
+		}
+
+		echo json_encode($out);
 	}
 ?>
