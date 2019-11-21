@@ -141,5 +141,9 @@
     </form>
     <p class="text-center text-muted small">Don't have an account? <a href="#">Sign up here!</a></p>
 </div>
+
+
+
+<script type="text/javascript" src="login.js"></script>
 </body>
 </html>                            
