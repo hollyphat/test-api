@@ -9,6 +9,12 @@
 		$username = trim(addslashes($_POST['username']));
 		$password = trim(addslashes($_POST['password']));
 
+		if($username == "" || $password == ""){
+			$out = array('status' => 0, 'message' => 'All fields are required!');
+			echo json_encode($out);
+			exit();
+		}
+
 		$query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
 
 		$sql = mysqli_query($connection, $query);
