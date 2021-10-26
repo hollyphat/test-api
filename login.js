@@ -3,12 +3,19 @@ $(document).ready(function(){
 		let username = $("#login-username").val();
 		let password = $("#login-password").val();
 
+		if(username == '' || 
+			password == ''
+			){
+			alert("All fields are required!");
+			return;
+		}
+
 
 		$.ajax({
 			url: 'api.php',
 			type: 'POST',
 			data: {
-				'ok-login': '1',
+				'ok-login': 'yes',
 				'username': username,
 				'password': password
 			},
