@@ -21,10 +21,10 @@ $(document).ready(function(){
 			},
 			dataType: 'json',
 			success: function(f){
-				console.log(f);
+				//console.log(f);
 			},
 			error: function(e){
-				console.log(e);
+				//console.log(e);
 			}
 		});
 	});
